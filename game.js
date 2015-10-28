@@ -1,53 +1,63 @@
   var totalCorrectAnswers = 0;
 
   var q1 = {
-    question:'Is Dave bearded? (answer \'[y]es\' or \'[n]o\')',
+    question:'Q1: Is Dave bearded? (answer \'[y]es\' or \'[n]o\')',
     correctAnswer1:'y',
     correctAnswer2:'yes',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'You guessed that Dave is bearded. This is indeed (currently) true.',
-    responseIncorrect:'You guessed that Dave is not bearded. This is (currently) not true.'
+    responseCorrect:'Q1 Correct: You guessed that Dave is bearded. This is indeed (currently) true.',
+    responseIncorrect:'Q1 Incorrect: You guessed that Dave is not bearded. This is (currently) not true.'
   }
 
   var q2 = {
-    question:'Is Dave, or has he ever been, a librarian? (answer \'[y]es\' or \'[n]o\')',
+    question:'Q2: Is Dave, or has he ever been, a librarian? (answer \'[y]es\' or \'[n]o\')',
     correctAnswer1:'y',
     correctAnswer2:'yes',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'You guessed that Dave is or was a librarian. This is indeed true. The subject of who is or is not a librarian is one of much debate amongst librarian people. This is indicative of one of the reasons Dave no longer works as a librarian. He does, however, still consider himself to be one. He did, beyond any shadow of a doubt, used to be one.',
-    responseIncorrect:'You guessed that Dave is not, and has never been, a librarian. Dave was in fact a librarian and still considers himself one.'
+    responseCorrect:'Q2 Correct: You guessed that Dave is or was a librarian. This is indeed true. The subject of who is or is not a librarian is one of much debate amongst librarian people. This is indicative of one of the reasons Dave no longer works as a librarian. He does, however, still consider himself to be one. He did, beyond any shadow of a doubt, used to be one.',
+    responseIncorrect:'Q2 Incorrect: You guessed that Dave is not, and has never been, a librarian. Dave was in fact a librarian and still considers himself one.'
   }
 
   var q3 = {
-    question:'Does Dave have cats? (answer \'[y]es\' or \'[n]o\')',
+    question:'Q3: Does Dave have cats? (answer \'[y]es\' or \'[n]o\')',
     correctAnswer1:'no',
     correctAnswer2:'n',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'You guessed that Dave does not have cats. This is true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. He does still indulge in the occassional cat pic.',
-    responseIncorrect:'You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change.'
+    responseCorrect:'Q3 Correct: You guessed that Dave does not have cats. This is true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. He does still indulge in the occassional cat pic.',
+    responseIncorrect:'Q3 Incorrect: You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change.'
   }
 
   var q4 = {
-    question:'How old is Dave? (answer in the form of an integer)',
+    question:'Q4: How old is Dave? (answer in the form of an integer)',
     correctAnswer: 43,
     submittedAnswer:'',
     answeredHighLowCorrect: '',
-    responseCorrect:'You guessed Dave is 43. That is correct. Sadly, 42 did not yield Dave the answer to Life, the Universe, & Everything',
+    responseCorrect:'Q4 Correct: You guessed Dave is 43. That is correct. Sadly, 42 did not yield Dave the answer to Life, the Universe, & Everything',
     responseLow:'. Kind of you to say, but you have guessed low.',
     responseHigh:'. Seriously?!? You guessed high. Thanks for that. :-p'
   }
 
     var q5 = {
-    question:'Was dave born in Washington? (answer \'[y]es\' or \'[n]o\')',
+    question:'Q5: Was Dave born in Washington? (answer \'[y]es\' or \'[n]o\')',
     correctAnswer1:'no',
     correctAnswer2:'n',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado.',
-    responseIncorrect:'You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but gre up in Colorado.'
+    responseCorrect:'Q5 Correct: You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado.',
+    responseIncorrect:'Q5 Incorrect: You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but gre up in Colorado.'
+  }
+
+    var q6 = {
+    question:'Q6: How many states has Dave lived in? (answer in the form of an integer)',
+    correctAnswer: 6,
+    submittedAnswer:'',
+    answeredHighLowCorrect: '',
+    responseCorrect:'Q6 Correct: You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA',
+    responseLow:' states. You have guessed low.',
+    responseHigh:' states. You guessed high.'
   }
 
   //Begin Q1 logic
@@ -102,7 +112,7 @@
   }
   while (q3.submittedAnswer !== "y" && q3.submittedAnswer !== "yes" && q3.submittedAnswer !== "n" && q3.submittedAnswer !== "no");
 
-  if (q3.submittedAnswer === q3.correctAnswer1 || q3.correctAnswer2) {
+  if (q3.submittedAnswer === q3.correctAnswer1 || q3.submittedAnswer === q3.correctAnswer2) {
     q3.answeredCorrectly = true;
   }
 
@@ -157,6 +167,33 @@
   console.log('Q5 totalCorrectAnswers: ' + totalCorrectAnswers);
   //End Q5 logic. Begin the cutting and pasting, in lieu of a cool method.
 
+  //Begin Q6 logic
+  //And now it gets personal.
+  do {
+    q6.submittedAnswer = prompt(q6.question);
+    console.log('q6.submittedAnswer is:' + q6.submittedAnswer);
+    q6.submittedAnswer = parseInt(q6.submittedAnswer, 10);
+    console.log('ParseInt of q6.submittedAnswer is: ' + q6.submittedAnswer)
+  }
+  while (isNaN(q6.submittedAnswer) === true);
+
+  if (q6.submittedAnswer === q6.correctAnswer) {
+    q6.answeredHighLowCorrect = 'correct';
+  } else if (q6.submittedAnswer < q6.correctAnswer) {
+    q6.answeredHighLowCorrect = 'low';
+  } else {
+    q6.answeredHighLowCorrect = 'high';
+  }
+  console.log('q6.answeredHighLowCorrect:' + q6.answeredHighLowCorrect);
+
+  if (q6.answeredHighLowCorrect === 'correct') {
+    totalCorrectAnswers = totalCorrectAnswers + 1;
+  }
+  console.log('Q6 totalCorrectAnswers: ' + totalCorrectAnswers);
+
+  //End Q4 logic.
+
+
   if (q1.answeredCorrectly) {
     alert(q1.responseCorrect);
   } else {
@@ -178,9 +215,9 @@
   if (q4.answeredHighLowCorrect === 'correct') {
     alert(q4.responseCorrect);
   } else if (q4.answeredHighLowCorrect === 'low') {
-    alert('You guessed that dave is ' + q4.submittedAnswer + q4.responseLow);
+    alert('Q4 Low: You guessed that Dave is ' + q4.submittedAnswer + q4.responseLow);
   } else {
-    alert('You guessed that dave is ' + q4.submittedAnswer + q4.responseHigh);
+    alert('Q4 High: You guessed that Dave is ' + q4.submittedAnswer + q4.responseHigh);
   }
 
   if (q5.answeredCorrectly) {
@@ -189,4 +226,12 @@
     alert(q5.responseIncorrect);
   }
 
-  alert('You got ' + totalCorrectAnswers + ' of 5 questions correct.');
+  if (q6.answeredHighLowCorrect === 'correct') {
+    alert(q6.responseCorrect);
+  } else if (q6.answeredHighLowCorrect === 'low') {
+    alert('Q6 Low: You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseLow);
+  } else {
+    alert('Q6 High: You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseHigh);
+  }
+
+  alert('You got ' + totalCorrectAnswers + ' of 6 questions correct.');
