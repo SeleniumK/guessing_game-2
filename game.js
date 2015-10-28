@@ -40,6 +40,16 @@
     responseHigh:'. Seriously?!? You guessed high. Thanks for that. :-p'
   }
 
+    var q5 = {
+    question:'Was dave born in Washington? (answer \'[y]es\' or \'[n]o\')',
+    correctAnswer1:'no',
+    correctAnswer2:'n',
+    submittedAnswer:'',
+    answeredCorrectly:false,
+    responseCorrect:'You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado.',
+    responseIncorrect:'You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but gre up in Colorado.'
+  }
+
   //Begin Q1 logic
   //I really wanted to make the below a method of the q1 (and subsequent) object(s), but I've run out of mental energy for the evening.
   do {
@@ -57,6 +67,8 @@
   if (q1.answeredCorrectly) {
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
+  console.log('Q1 totalCorrectAnswers: ' + totalCorrectAnswers);
+
   //End Q1 logic. Begin the cutting and pasting, in lieu of a cool method.
 
   //Begin Q2 logic
@@ -76,6 +88,8 @@
   if (q2.answeredCorrectly) {
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
+  console.log('Q2 totalCorrectAnswers: ' + totalCorrectAnswers);
+
   //End Q2 logic.
 
   //Begin Q3 logic
@@ -88,13 +102,15 @@
   }
   while (q3.submittedAnswer !== "y" && q3.submittedAnswer !== "yes" && q3.submittedAnswer !== "n" && q3.submittedAnswer !== "no");
 
-  if (q3.submittedAnswer === q3.correctAnswer) {
+  if (q3.submittedAnswer === q3.correctAnswer1 || q3.correctAnswer2) {
     q3.answeredCorrectly = true;
   }
 
   if (q3.answeredCorrectly) {
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
+  console.log('Q3 totalCorrectAnswers: ' + totalCorrectAnswers);
+
   //End Q3 logic.
 
   //Begin Q4 logic
@@ -118,7 +134,28 @@
   if (q4.answeredHighLowCorrect === 'correct') {
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
+  console.log('Q4 totalCorrectAnswers: ' + totalCorrectAnswers);
+
   //End Q4 logic.
+
+  //Begin Q5 logic
+  //Yeah... So, now I really wish I'd gone with putting my logic in a method, then just looped through it. C'est la vie... I'm go back and retrofit it, but I'm trying to maintain a life outside of CF. Trying...
+  do {
+    q5.submittedAnswer = prompt(q5.question);
+    console.log('q5.submittedAnswer is:' + q5.submittedAnswer);
+    q5.submittedAnswer = q5.submittedAnswer.toLowerCase();
+    console.log('q5.submittedAnswer made lower case is:' + q5.submittedAnswer);
+  }
+  while (q5.submittedAnswer !== "y" && q5.submittedAnswer !== "yes" && q5.submittedAnswer !== "n" && q5.submittedAnswer !== "no");
+  if (q5.submittedAnswer.toLowerCase() === q5.correctAnswer1 || q5.submittedAnswer.toLowerCase() === q5.correctAnswer2) {
+    q5.answeredCorrectly = true;
+  }
+
+  if (q5.answeredCorrectly) {
+    totalCorrectAnswers = totalCorrectAnswers + 1;
+  }
+  console.log('Q5 totalCorrectAnswers: ' + totalCorrectAnswers);
+  //End Q5 logic. Begin the cutting and pasting, in lieu of a cool method.
 
   if (q1.answeredCorrectly) {
     alert(q1.responseCorrect);
@@ -146,4 +183,10 @@
     alert('You guessed that dave is ' + q4.submittedAnswer + q4.responseHigh);
   }
 
-  alert('You got ' + totalCorrectAnswers + ' of 4 questions correct.');
+  if (q5.answeredCorrectly) {
+    alert(q5.responseCorrect);
+  } else {
+    alert(q5.responseIncorrect);
+  }
+
+  alert('You got ' + totalCorrectAnswers + ' of 5 questions correct.');
