@@ -2,8 +2,7 @@
 
   var q1 = {
     question:'Q1: Is Dave bearded? (answer \'[y]es\' or \'[n]o\')',
-    correctAnswer1:'y',
-    correctAnswer2:'yes',
+    correctAnswer:'yes',
     submittedAnswer:'',
     answeredCorrectly:false,
     responseCorrect:'Q1 Correct: You guessed that Dave is bearded. This is indeed (currently) true.',
@@ -70,12 +69,12 @@
   }
   while (q1.submittedAnswer !== "y" && q1.submittedAnswer !== "yes" && q1.submittedAnswer !== "n" && q1.submittedAnswer !== "no");
   //while (q1.submittedAnswer.toLowerCase() !== ("yes" || "y" || "n" || "no");
-  if (q1.submittedAnswer === q1.correctAnswer1 || q1.submittedAnswer === q1.correctAnswer2) {
+  if (q1.submittedAnswer === q1.correctAnswer || q1.submittedAnswer === q1.correctAnswer.substring(0,1)) {
     q1.answeredCorrectly = true;
   }
 
   if (q1.answeredCorrectly) {
-    totalCorrectAnswers = totalCorrectAnswers + 1;
+    totalCorrectAnswers += 1;
   }
   console.log('Q1 totalCorrectAnswers: ' + totalCorrectAnswers);
 
