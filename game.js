@@ -60,7 +60,6 @@
   }
 
   //Begin Q1 logic
-  //I really wanted to make the below a method of the q1 (and subsequent) object(s), but I've run out of mental energy for the evening.
   do {
     q1.submittedAnswer = prompt(q1.question);
     console.log('q1.submittedAnswer is:' + q1.submittedAnswer);
@@ -68,7 +67,6 @@
     console.log('q1.submittedAnswer made lower case is:' + q1.submittedAnswer);
   }
   while (q1.submittedAnswer !== "y" && q1.submittedAnswer !== "yes" && q1.submittedAnswer !== "n" && q1.submittedAnswer !== "no");
-  //while (q1.submittedAnswer.toLowerCase() !== ("yes" || "y" || "n" || "no");
   if (q1.submittedAnswer === q1.correctAnswer || q1.submittedAnswer === q1.correctAnswer.substring(0,1)) {
     q1.answeredCorrectly = true;
   }
@@ -77,11 +75,9 @@
     totalCorrectAnswers += 1;
   }
   console.log('Q1 totalCorrectAnswers: ' + totalCorrectAnswers);
-
-  //End Q1 logic. Begin the cutting and pasting, in lieu of a cool method.
+  //End Q1 logic.
 
   //Begin Q2 logic
-  //Damn, I wish I'd had the energy to get jiggy with methods and loops
   do {
     q2.submittedAnswer = prompt(q2.question);
     console.log('q2.submittedAnswer is:' + q2.submittedAnswer);
@@ -98,11 +94,9 @@
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
   console.log('Q2 totalCorrectAnswers: ' + totalCorrectAnswers);
-
   //End Q2 logic.
 
   //Begin Q3 logic
-  //Onward and upward!! I sense pizza, the couch, and the readings in my near future.
   do {
     q3.submittedAnswer = prompt(q3.question);
     console.log('q3.submittedAnswer is:' + q3.submittedAnswer);
@@ -123,7 +117,6 @@
   //End Q3 logic.
 
   //Begin Q4 logic
-  //And now it gets personal.
   do {
     q4.submittedAnswer = prompt(q4.question);
     console.log('q4.submittedAnswer is:' + q4.submittedAnswer);
@@ -144,11 +137,9 @@
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
   console.log('Q4 totalCorrectAnswers: ' + totalCorrectAnswers);
-
   //End Q4 logic.
 
   //Begin Q5 logic
-  //Yeah... So, now I really wish I'd gone with putting my logic in a method, then just looped through it. C'est la vie... I'm go back and retrofit it, but I'm trying to maintain a life outside of CF. Trying...
   do {
     q5.submittedAnswer = prompt(q5.question);
     console.log('q5.submittedAnswer is:' + q5.submittedAnswer);
@@ -164,10 +155,9 @@
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
   console.log('Q5 totalCorrectAnswers: ' + totalCorrectAnswers);
-  //End Q5 logic. Begin the cutting and pasting, in lieu of a cool method.
+  //End Q5 logic.
 
   //Begin Q6 logic
-  //And now it gets personal.
   do {
     q6.submittedAnswer = prompt(q6.question);
     console.log('q6.submittedAnswer is:' + q6.submittedAnswer);
@@ -189,8 +179,7 @@
     totalCorrectAnswers = totalCorrectAnswers + 1;
   }
   console.log('Q6 totalCorrectAnswers: ' + totalCorrectAnswers);
-
-  //End Q4 logic.
+  //End Q6 logic.
 
 
   if (q1.answeredCorrectly) {
