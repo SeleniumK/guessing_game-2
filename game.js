@@ -51,7 +51,8 @@
     submittedAnswer:'',
     answeredCorrectly:false,
     responseCorrect:'A5: Correct! You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado.',
-    responseIncorrect:'A5! Incorrect: You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but gre up in Colorado.'
+    responseIncorrect:'A5! Incorrect: You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but grew up in Colorado.',
+    answer: document.getElementById('a5')
   }
 
     var q6 = {
@@ -61,7 +62,8 @@
     answeredHighLowCorrect: '',
     responseCorrect:'A6: Correct! You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA',
     responseLow:' states. You have guessed low.',
-    responseHigh:' states. You guessed high.'
+    responseHigh:' states. You guessed high.',
+    answer: document.getElementById('a6')
   }
 
   //Begin Q1 logic
@@ -192,37 +194,39 @@
   }
 
   if (q2.answeredCorrectly) {
-    alert(q2.responseCorrect);
+    q2.answer.innerHTML = q2.responseCorrect;
   } else {
-    alert(q2.responseIncorrect);
+    q2.answer.innerHTML = q2.responseIncorrect;
   }
 
   if (q3.answeredCorrectly) {
-    alert(q3.responseCorrect);
+    q3.answer.innerHTML = q3.responseCorrect;
   } else {
-    alert(q3.responseIncorrect);
+    q3.answer.innerHTML = q3.responseIncorrect;
   }
 
   if (q4.answeredHighLowCorrect === 'correct') {
-    alert(q4.responseCorrect);
+    q4.answer.innerHTML = q4.responseCorrect;
   } else if (q4.answeredHighLowCorrect === 'low') {
-    alert('A4: Low! You guessed that Dave is ' + q4.submittedAnswer + q4.responseLow);
+    q4.answer.innerHTML = 'A4: Low! You guessed that Dave is ' + q4.submittedAnswer + q4.responseLow;
   } else {
-    alert('A4: High! You guessed that Dave is ' + q4.submittedAnswer + q4.responseHigh);
+    q4.answer.innerHTML = 'A4: High! You guessed that Dave is ' + q4.submittedAnswer + q4.responseHigh;
   }
 
   if (q5.answeredCorrectly) {
-    alert(q5.responseCorrect);
+    q5.answer.innerHTML = q5.responseCorrect;
   } else {
-    alert(q5.responseIncorrect);
+    q5.answer.innerHTML = q5.responseIncorrect;
   }
 
   if (q6.answeredHighLowCorrect === 'correct') {
-    alert(q6.responseCorrect);
+    q6.answer.innerHTML = q6.responseCorrect;
   } else if (q6.answeredHighLowCorrect === 'low') {
-    alert('A6: Low! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseLow);
+    q6.answer.innerHTML = 'A6: Low! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseLow;
   } else {
-    alert('A6: High! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseHigh);
+    q6.answer.innerHTML = 'A6: High! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseHigh;
   }
 
-  alert('You got ' + totalCorrectAnswers + ' of 6 questions correct.');
+var correct = document.getElementById('correct');
+correct.innerHTML = 'You got ' + totalCorrectAnswers + ' of 6 questions correct.';
+  //alert('You got ' + totalCorrectAnswers + ' of 6 questions correct.');
