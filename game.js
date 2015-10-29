@@ -1,12 +1,14 @@
   var totalCorrectAnswers = 0;
+  //var answer1 = document.getElementById('a1');
 
   var q1 = {
     question:'Q1: Is Dave bearded? (answer \'[y]es\' or \'[n]o\')',
     correctAnswer:'yes',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'Q1 Correct: You guessed that Dave is bearded. This is indeed (currently) true.',
-    responseIncorrect:'Q1 Incorrect: You guessed that Dave is not bearded. This is (currently) not true.'
+    responseCorrect:'A1: Correct! You guessed that Dave is bearded. This is indeed (currently) true.',
+    responseIncorrect:'A1 Incorrect! You guessed that Dave is not bearded. This is (currently) not true.',
+    answer: document.getElementById('a1')
   }
 
   var q2 = {
@@ -15,8 +17,9 @@
     correctAnswer2:'yes',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'Q2 Correct: You guessed that Dave is or was a librarian. This is indeed true. The subject of who is or is not a librarian is one of much debate amongst librarian people. This is indicative of one of the reasons Dave no longer works as a librarian. He does, however, still consider himself to be one. He did, beyond any shadow of a doubt, used to be one.',
-    responseIncorrect:'Q2 Incorrect: You guessed that Dave is not, and has never been, a librarian. Dave was in fact a librarian and still considers himself one.'
+    responseCorrect:'A2: Correct! You guessed that Dave is or was a librarian. This is indeed true. The subject of who is or is not a librarian is one of much debate amongst librarian people. This is indicative of one of the reasons Dave no longer works as a librarian. He does, however, still consider himself to be one. He did, beyond any shadow of a doubt, used to be one.',
+    responseIncorrect:'A2 Incorrect! You guessed that Dave is not, and has never been, a librarian. Dave was in fact a librarian and still considers himself one.',
+    answer: document.getElementById('a2')
   }
 
   var q3 = {
@@ -25,8 +28,9 @@
     correctAnswer2:'n',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'Q3 Correct: You guessed that Dave does not have cats. This is true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. He does still indulge in the occassional cat pic.',
-    responseIncorrect:'Q3 Incorrect: You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change.'
+    responseCorrect:'A3: Correct! You guessed that Dave does not have cats. This is true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. He does still indulge in the occassional cat pic.',
+    responseIncorrect:'A3: Incorrect! You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change.',
+    answer: document.getElementById('a3')
   }
 
   var q4 = {
@@ -34,9 +38,10 @@
     correctAnswer: 43,
     submittedAnswer:'',
     answeredHighLowCorrect: '',
-    responseCorrect:'Q4 Correct: You guessed Dave is 43. That is correct. Sadly, 42 did not yield Dave the answer to Life, the Universe, & Everything',
+    responseCorrect:'A4: Correct! You guessed Dave is 43. That is correct. Sadly, 42 did not yield Dave the answer to Life, the Universe, & Everything',
     responseLow:'. Kind of you to say, but you have guessed low.',
-    responseHigh:'. Seriously?!? You guessed high. Thanks for that. :-p'
+    responseHigh:'. Seriously?!? You guessed high. Thanks for that. :-p',
+    answer: document.getElementById('a4')
   }
 
     var q5 = {
@@ -45,8 +50,8 @@
     correctAnswer2:'n',
     submittedAnswer:'',
     answeredCorrectly:false,
-    responseCorrect:'Q5 Correct: You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado.',
-    responseIncorrect:'Q5 Incorrect: You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but gre up in Colorado.'
+    responseCorrect:'A5: Correct! You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado.',
+    responseIncorrect:'A5! Incorrect: You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but gre up in Colorado.'
   }
 
     var q6 = {
@@ -54,16 +59,14 @@
     correctAnswer: 6,
     submittedAnswer:'',
     answeredHighLowCorrect: '',
-    responseCorrect:'Q6 Correct: You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA',
+    responseCorrect:'A6: Correct! You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA',
     responseLow:' states. You have guessed low.',
     responseHigh:' states. You guessed high.'
   }
 
   //Begin Q1 logic
   do {
-    q1.submittedAnswer = prompt(q1.question);
-    console.log('q1.submittedAnswer is:' + q1.submittedAnswer);
-    q1.submittedAnswer = q1.submittedAnswer.toLowerCase();
+    q1.submittedAnswer = prompt(q1.question).toLowerCase();
     console.log('q1.submittedAnswer made lower case is:' + q1.submittedAnswer);
   }
   while (q1.submittedAnswer !== "y" && q1.submittedAnswer !== "yes" && q1.submittedAnswer !== "n" && q1.submittedAnswer !== "no");
@@ -183,9 +186,9 @@
 
 
   if (q1.answeredCorrectly) {
-    alert(q1.responseCorrect);
+    q1.answer.innerHTML = q1.responseCorrect;
   } else {
-    alert(q1.responseIncorrect);
+    q1.answer.innerHTML = q1.responseIncorrect;
   }
 
   if (q2.answeredCorrectly) {
@@ -203,9 +206,9 @@
   if (q4.answeredHighLowCorrect === 'correct') {
     alert(q4.responseCorrect);
   } else if (q4.answeredHighLowCorrect === 'low') {
-    alert('Q4 Low: You guessed that Dave is ' + q4.submittedAnswer + q4.responseLow);
+    alert('A4: Low! You guessed that Dave is ' + q4.submittedAnswer + q4.responseLow);
   } else {
-    alert('Q4 High: You guessed that Dave is ' + q4.submittedAnswer + q4.responseHigh);
+    alert('A4: High! You guessed that Dave is ' + q4.submittedAnswer + q4.responseHigh);
   }
 
   if (q5.answeredCorrectly) {
@@ -217,9 +220,9 @@
   if (q6.answeredHighLowCorrect === 'correct') {
     alert(q6.responseCorrect);
   } else if (q6.answeredHighLowCorrect === 'low') {
-    alert('Q6 Low: You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseLow);
+    alert('A6: Low! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseLow);
   } else {
-    alert('Q6 High: You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseHigh);
+    alert('A6: High! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseHigh);
   }
 
   alert('You got ' + totalCorrectAnswers + ' of 6 questions correct.');
