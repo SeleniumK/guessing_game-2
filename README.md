@@ -5,6 +5,8 @@ The code was first written 2015-10-26 and is currently undergoing very rapid cha
 
 Any questions can be directed at: guessinggame@bodhitech.org
 
+UPDATE: edited 10/29/2015 by Michael (driving) and David (navigating);
+
 This assignment requested a joke:
 
 A patron walks into the library…
