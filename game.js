@@ -70,7 +70,7 @@
   }
   while (q1.submittedAnswer !== "y" && q1.submittedAnswer !== "yes" && q1.submittedAnswer !== "n" && q1.submittedAnswer !== "no");
   //while (q1.submittedAnswer.toLowerCase() !== ("yes" || "y" || "n" || "no");
-  if (q1.submittedAnswer.toLowerCase() === q1.correctAnswer1 || q1.submittedAnswer.toLowerCase() === q1.correctAnswer2) {
+  if (q1.submittedAnswer === q1.correctAnswer1 || q1.submittedAnswer === q1.correctAnswer2) {
     q1.answeredCorrectly = true;
   }
 
@@ -157,7 +157,7 @@
     console.log('q5.submittedAnswer made lower case is:' + q5.submittedAnswer);
   }
   while (q5.submittedAnswer !== "y" && q5.submittedAnswer !== "yes" && q5.submittedAnswer !== "n" && q5.submittedAnswer !== "no");
-  if (q5.submittedAnswer.toLowerCase() === q5.correctAnswer1 || q5.submittedAnswer.toLowerCase() === q5.correctAnswer2) {
+  if (q5.submittedAnswer === q5.correctAnswer1 || q5.submittedAnswer === q5.correctAnswer2) {
     q5.answeredCorrectly = true;
   }
 
