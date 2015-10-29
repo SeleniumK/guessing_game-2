@@ -44,7 +44,7 @@ var q4 = {
   answer: document.getElementById('a4')
 }
 
-  var q5 = {
+var q5 = {
   question:'Q5: Was Dave born in Washington? (answer \'[y]es\' or \'[n]o\')',
   correctAnswer1:'no',
   correctAnswer2:'n',
@@ -55,7 +55,7 @@ var q4 = {
   answer: document.getElementById('a5')
 }
 
-  var q6 = {
+var q6 = {
   question:'Q6: How many states has Dave lived in? (answer in the form of an integer)',
   correctAnswer: 6,
   submittedAnswer:'',
@@ -82,7 +82,7 @@ var question1 = function() {
   }
   console.log('Q1 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q1.answeredCorrectly) {
-  q1.answer.innerHTML = q1.responseCorrect;
+    q1.answer.innerHTML = q1.responseCorrect;
   } else {
     q1.answer.innerHTML = q1.responseIncorrect;
   }
@@ -109,7 +109,7 @@ var question2 = function() {
   }
   console.log('Q2 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q2.answeredCorrectly) {
-  q2.answer.innerHTML = q2.responseCorrect;
+    q2.answer.innerHTML = q2.responseCorrect;
   } else {
     q2.answer.innerHTML = q2.responseIncorrect;
   }
@@ -136,7 +136,7 @@ question3 = function() {
   }
   console.log('Q3 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q3.answeredCorrectly) {
-  q3.answer.innerHTML = q3.responseCorrect;
+    q3.answer.innerHTML = q3.responseCorrect;
   } else {
     q3.answer.innerHTML = q3.responseIncorrect;
   }
@@ -167,7 +167,7 @@ question4 = function() {
   }
   console.log('Q4 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q4.answeredHighLowCorrect === 'correct') {
-  q4.answer.innerHTML = q4.responseCorrect;
+    q4.answer.innerHTML = q4.responseCorrect;
   } else if (q4.answeredHighLowCorrect === 'low') {
     q4.answer.innerHTML = 'A4: Low! You guessed that Dave is ' + q4.submittedAnswer + q4.responseLow;
   } else {
@@ -226,7 +226,7 @@ question6 = function() {
   }
   console.log('Q6 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q6.answeredHighLowCorrect === 'correct') {
-  q6.answer.innerHTML = q6.responseCorrect;
+    q6.answer.innerHTML = q6.responseCorrect;
   } else if (q6.answeredHighLowCorrect === 'low') {
     q6.answer.innerHTML = 'A6: Low! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseLow;
   } else {
