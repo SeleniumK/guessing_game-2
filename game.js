@@ -6,10 +6,10 @@ var q1 = {
   correctAnswer:'yes',
   submittedAnswer:'',
   answeredCorrectly:false,
-  responseCorrect:'A1: Correct! You guessed that Dave is bearded. This is indeed (currently) true.',
+  responseCorrect:'A1: Correct! You guessed that Dave is bearded. This is indeed (currently) true. <br /> <img src="img/beard.jpg">',
   responseIncorrect:'A1 Incorrect! You guessed that Dave is not bearded. This is (currently) not true.',
   answer: document.getElementById('a1')
-}
+};
 
 var q2 = {
   question:'Q2: Is Dave, or has he ever been, a librarian? (answer \'[y]es\' or \'[n]o\')',
@@ -17,10 +17,10 @@ var q2 = {
   correctAnswer2:'yes',
   submittedAnswer:'',
   answeredCorrectly:false,
-  responseCorrect:'A2: Correct! You guessed that Dave is or was a librarian. This is indeed true. The subject of who is or is not a librarian is one of much debate amongst librarian people. This is indicative of one of the reasons Dave no longer works as a librarian. He does, however, still consider himself to be one. He did, beyond any shadow of a doubt, used to be one.',
+  responseCorrect:'A2: Correct! You guessed that Dave is or was a librarian. This is indeed true. The subject of who is or is not a librarian is one of much debate amongst librarian people. This is indicative of one of the reasons Dave no longer works as a librarian. He does, however, still consider himself to be one. He did, beyond any shadow of a doubt, used to be one. <br /> <img src="img/librarian.jpg">',
   responseIncorrect:'A2 Incorrect! You guessed that Dave is not, and has never been, a librarian. Dave was in fact a librarian and still considers himself one.',
   answer: document.getElementById('a2')
-}
+};
 
 var q3 = {
   question:'Q3: Does Dave have cats? (answer \'[y]es\' or \'[n]o\')',
@@ -29,20 +29,20 @@ var q3 = {
   submittedAnswer:'',
   answeredCorrectly:false,
   responseCorrect:'A3: Correct! You guessed that Dave does not have cats. This is true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. He does still indulge in the occassional cat pic.',
-  responseIncorrect:'A3: Incorrect! You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change.',
+  responseIncorrect:'A3: Incorrect! You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. <br /> <img src="img/cat.jpg">',
   answer: document.getElementById('a3')
-}
+};
 
 var q4 = {
   question:'Q4: How old is Dave? (answer in the form of an integer)',
   correctAnswer: 43,
   submittedAnswer:'',
   answeredHighLowCorrect: '',
-  responseCorrect:'A4: Correct! You guessed Dave is 43. That is correct. Sadly, 42 did not yield Dave the answer to Life, the Universe, & Everything',
+  responseCorrect:'A4: Correct! You guessed Dave is 43. That is correct. Sadly, 42 did not yield Dave the answer to Life, the Universe, & Everything <br /> <img src="img/oldman.jpg">',
   responseLow:'. Kind of you to say, but you have guessed low.',
   responseHigh:'. Seriously?!? You guessed high. Thanks for that. :-p',
   answer: document.getElementById('a4')
-}
+};
 
 var q5 = {
   question:'Q5: Was Dave born in Washington? (answer \'[y]es\' or \'[n]o\')',
@@ -50,21 +50,21 @@ var q5 = {
   correctAnswer2:'n',
   submittedAnswer:'',
   answeredCorrectly:false,
-  responseCorrect:'A5: Correct! You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado.',
+  responseCorrect:'A5: Correct! You guessed that Dave was not born in Washington. This is true. Dave was born in New Jersey and grew up in Colorado. <br /> <img src="img/mapNJCO.png">',
   responseIncorrect:'A5! Incorrect: You guessed that Dave was born in Washington. This is not true. He was born in New Jersey, but grew up in Colorado.',
   answer: document.getElementById('a5')
-}
+};
 
 var q6 = {
   question:'Q6: How many states has Dave lived in? (answer in the form of an integer)',
   correctAnswer: 6,
   submittedAnswer:'',
   answeredHighLowCorrect: '',
-  responseCorrect:'A6: Correct! You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA',
+  responseCorrect:'A6: Correct! You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA <br /> <img src="mapStates.png">',
   responseLow:' states. You have guessed low.',
   responseHigh:' states. You guessed high.',
   answer: document.getElementById('a6')
-}
+};
 
 //Begin Q1 logic
 var question1 = function() {
