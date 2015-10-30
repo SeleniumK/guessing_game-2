@@ -1,5 +1,4 @@
 var totalCorrectAnswers = 0;
-//var answer1 = document.getElementById('a1');
 
 var q1 = {
   question:'Q1: Is Dave bearded? (answer \'[y]es\' or \'[n]o\')',
@@ -28,8 +27,8 @@ var q3 = {
   correctAnswer2:'n',
   submittedAnswer:'',
   answeredCorrectly:false,
-  responseCorrect:'A3: Correct! You guessed that Dave does not have cats. This is true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. He does still indulge in the occassional cat pic.',
-  responseIncorrect:'A3: Incorrect! You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. <br /> <img src="img/cat.jpg">',
+  responseCorrect:'A3: Correct! You guessed that Dave does not have cats. This is true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change. He does still indulge in the occassional cat pic. <br /> <img src="img/cat.jpg">',
+  responseIncorrect:'A3: Incorrect! You guessed that Dave has cats. This is not currently true. He previously had cats, but is on a cat hiatus. Due to allergies, it\'s uncertain whether this will change.',
   answer: document.getElementById('a3')
 };
 
@@ -60,7 +59,7 @@ var q6 = {
   correctAnswer: 6,
   submittedAnswer:'',
   answeredHighLowCorrect: '',
-  responseCorrect:'A6: Correct! You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA <br /> <img src="mapStates.png">',
+  responseCorrect:'A6: Correct! You guessed 6 states. That is correct. Dave has lived in NY, NJ, CO, CA, HI, & WA <br /> <img src="img/mapStates.png">',
   responseLow:' states. You have guessed low.',
   responseHigh:' states. You guessed high.',
   answer: document.getElementById('a6')
@@ -82,15 +81,16 @@ var question1 = function() {
   }
   console.log('Q1 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q1.answeredCorrectly) {
+    q1.answer.className = "correct";
     q1.answer.innerHTML = q1.responseCorrect;
   } else {
+    q1.answer.className = "incorrect";
     q1.answer.innerHTML = q1.responseIncorrect;
   }
 }
-question1();
 //End Q1 logic.
 
-//Begin Q2 logic
+// //Begin Q2 logic
 var question2 = function() {
   do {
     q2.submittedAnswer = prompt(q2.question);
@@ -109,15 +109,16 @@ var question2 = function() {
   }
   console.log('Q2 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q2.answeredCorrectly) {
+    q2.answer.className = "correct";
     q2.answer.innerHTML = q2.responseCorrect;
   } else {
+    q2.answer.className = "incorrect";
     q2.answer.innerHTML = q2.responseIncorrect;
   }
 }
-question2();
-//End Q2 logic.
+// //End Q2 logic.
 
-//Begin Q3 logic
+// // //Begin Q3 logic
 question3 = function() {
   do {
     q3.submittedAnswer = prompt(q3.question);
@@ -136,15 +137,16 @@ question3 = function() {
   }
   console.log('Q3 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q3.answeredCorrectly) {
+    q3.answer.className = "correct";
     q3.answer.innerHTML = q3.responseCorrect;
   } else {
+    q3.answer.className = "incorrect";
     q3.answer.innerHTML = q3.responseIncorrect;
   }
 }
-question3();
-//End Q3 logic.
+// // //End Q3 logic.
 
-//Begin Q4 logic
+// // //Begin Q4 logic
 question4 = function() {
   do {
     q4.submittedAnswer = prompt(q4.question);
@@ -167,17 +169,19 @@ question4 = function() {
   }
   console.log('Q4 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q4.answeredHighLowCorrect === 'correct') {
+    q4.answer.className = "correct";
     q4.answer.innerHTML = q4.responseCorrect;
   } else if (q4.answeredHighLowCorrect === 'low') {
+    q4.answer.className = "incorrect";
     q4.answer.innerHTML = 'A4: Low! You guessed that Dave is ' + q4.submittedAnswer + q4.responseLow;
   } else {
+    q4.answer.className = "incorrect";
     q4.answer.innerHTML = 'A4: High! You guessed that Dave is ' + q4.submittedAnswer + q4.responseHigh;
   }
 }
-question4();
-//End Q4 logic.
+// // //End Q4 logic.
 
-//Begin Q5 logic
+// // //Begin Q5 logic
 question5 = function() {do {
     q5.submittedAnswer = prompt(q5.question);
     console.log('q5.submittedAnswer is:' + q5.submittedAnswer);
@@ -194,15 +198,16 @@ question5 = function() {do {
   }
   console.log('Q5 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q5.answeredCorrectly) {
+    q5.answer.className = "correct";
     q5.answer.innerHTML = q5.responseCorrect;
   } else {
+    q5.answer.className = "incorrect";
     q5.answer.innerHTML = q5.responseIncorrect;
   }
   }
-question5();
-//End Q5 logic.
+// // //End Q5 logic.
 
-//Begin Q6 logic
+// // //Begin Q6 logic
 question6 = function() {
   do {
     q6.submittedAnswer = prompt(q6.question);
@@ -226,16 +231,25 @@ question6 = function() {
   }
   console.log('Q6 totalCorrectAnswers: ' + totalCorrectAnswers);
   if (q6.answeredHighLowCorrect === 'correct') {
+    q6.answer.className = "correct";
     q6.answer.innerHTML = q6.responseCorrect;
   } else if (q6.answeredHighLowCorrect === 'low') {
+    q6.answer.className = "incorrect";
     q6.answer.innerHTML = 'A6: Low! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseLow;
   } else {
+    q6.answer.className = "incorrect";
     q6.answer.innerHTML = 'A6: High! You guessed that Dave has lived in ' + q6.submittedAnswer + q6.responseHigh;
   }
-}
-question6();
-//End Q6 logic.
-
 var correct = document.getElementById('correct');
 correct.innerHTML = 'You got ' + totalCorrectAnswers + ' of 6 questions correct.';
+}
+// // //End Q6 logic.
+
+
+question1();
+setTimeout(question2, 1000);
+setTimeout(question3, 1100);
+setTimeout(question4, 1200);
+setTimeout(question5, 1300);
+setTimeout(question6, 1400);
 
